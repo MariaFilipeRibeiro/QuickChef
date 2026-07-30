@@ -1,0 +1,172 @@
+/* ============================================================
+   QUICK CHEF — login.css
+   Páginas: index.php, login/login.php
+   ============================================================ */
+
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Variáveis */
+:root {
+    --green-dark:  #1a3a0a;
+    --green-main:  #2d5a1b;
+    --green-mid:   #4a6a35;
+    --green-light: #d4e6c3;
+    --green-pale:  #f0f7e8;
+    --red:         #dc2626;
+    --gray-border: #e5e5e5;
+    --gray-text:   #555;
+    --white:       #ffffff;
+}
+
+
+/*  Página de login (body.body-login)  */
+body.body-login {
+    background-image: url('../imagens/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,0.97);
+    border: 1px solid var(--green-light);
+    border-radius: 12px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 24px rgba(45,90,27,0.08);
+}
+
+.login-logo {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--green-dark);
+    margin-bottom: 4px;
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--green-mid);
+    margin-bottom: 24px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    border-bottom: 1.5px solid var(--green-light);
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #7a9a6a;
+    cursor: pointer;
+    border: none;
+    border-bottom: 2.5px solid transparent;
+    margin-bottom: -1.5px;
+    background: none;
+    transition: color 0.2s, border-color 0.2s;
+    font-family: inherit;
+}
+
+.tab.active {
+    color: var(--green-main);
+    border-bottom-color: var(--green-main);
+}
+
+/* Formulários */
+.form-section        { display: none; }
+.form-section.active { display: block; }
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-dark);
+    margin: 12px 0 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid var(--green-light);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--green-dark);
+    background: #f9fdf5;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: var(--green-main);
+    background: var(--white);
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px;
+    background: var(--green-main);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, transform 0.15s;
+}
+
+input[type="submit"]:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+}
+
+/* Mensagens */
+.msg-erro {
+    background: #fff0ee;
+    border: 1px solid #f5c0b0;
+    color: #a03020;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.msg-sucesso {
+    background: #eaf6e0;
+    border: 1px solid #b0d890;
+    color: #2d6010;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+    .card { padding: 24px 16px; }
+}

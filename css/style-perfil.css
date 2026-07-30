@@ -1,0 +1,361 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+/* Variáveis */
+:root {
+    --green-dark:  #1a3a0a;
+    --green-main:  #2d5a1b;
+    --green-mid:   #4a6a35;
+    --green-light: #d4e6c3;
+    --green-pale:  #f0f7e8;
+    --red:         #dc2626;
+    --gray-border: #e5e5e5;
+    --gray-text:   #555;
+    --white:       #ffffff;
+}
+ 
+body.body-dashboard {
+    background-color: var(--green-pale);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: block;
+    min-height: 100vh;
+}
+ 
+/* Navbar — copiada do dashboard.css */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-border);
+    padding: 0 24px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+ 
+.nav-logo {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--green-dark);
+    text-decoration: none;
+    font-family: Georgia, serif;
+}
+ 
+.avatar-wrap { position: relative; }
+ 
+.avatar-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--green-pale);
+    border: 2px solid var(--green-light);
+    color: var(--green-main);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    outline: none;
+    transition: opacity 0.2s;
+}
+ 
+.avatar-btn:hover { opacity: 0.8; }
+ 
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: var(--white);
+    border: 1px solid var(--gray-border);
+    border-radius: 10px;
+    min-width: 180px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    overflow: hidden;
+    z-index: 100;
+}
+ 
+.avatar-wrap:focus-within .dropdown { display: block; }
+ 
+.dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    font-size: 14px;
+    color: #222;
+    text-decoration: none;
+    transition: background 0.1s;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+ 
+.dropdown a:hover  { background: var(--green-pale); }
+.dropdown a.active { color: var(--green-main); font-weight: 600; }
+.dropdown-divider  { height: 1px; background: var(--gray-border); margin: 4px 0; }
+.dropdown .logout  { color: var(--red); }
+ 
+/* Layout */
+.page-content {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 0 20px;
+}
+ 
+.page-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+}
+ 
+/* Mensagens */
+.msg-sucesso {
+    background: #eaf6e0;
+    border: 1px solid #b0d890;
+    color: #2d6010;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+ 
+.msg-erro {
+    background: #fff0ee;
+    border: 1px solid #f5c0b0;
+    color: #a03020;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+ 
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+ 
+.badge-admin { background: #fff3e0; color: #a05a00; }
+.badge-user  { background: var(--green-pale); color: var(--green-main); }
+ 
+/*  Topo do perfil  */
+.perfil-topo {
+    background: var(--white);
+    border: 1px solid var(--green-light);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+ 
+.perfil-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--green-pale);
+    border: 2px solid var(--green-light);
+    color: var(--green-main);
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+ 
+.perfil-info { flex: 1; }
+ 
+.perfil-nome {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green-dark);
+    font-family: Georgia, serif;
+    margin-bottom: 4px;
+}
+ 
+.perfil-email { font-size: 13px; color: var(--gray-text); }
+.perfil-role  { display: inline-block; margin-top: 6px; }
+ 
+/*  Secções  */
+.perfil-secao {
+    background: var(--white);
+    border: 1px solid var(--green-light);
+    border-radius: 12px;
+    padding: 24px 32px;
+    margin-bottom: 16px;
+}
+ 
+.perfil-secao h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-dark);
+    font-family: Georgia, serif;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--green-light);
+}
+ 
+/*  Linhas de toggle  */
+.toggle-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--green-light);
+}
+ 
+.toggle-item:last-child { border-bottom: none; }
+ 
+.toggle-item label {
+    font-size: 14px;
+    color: var(--green-dark);
+    font-weight: 600;
+    margin: 0;
+    cursor: pointer;
+}
+ 
+.toggle-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--green-main);
+    cursor: pointer;
+}
+ 
+.toggle-item input[type="number"] {
+    width: 120px;
+    padding: 8px 10px;
+    border: 1.5px solid var(--green-light);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--green-dark);
+    background: #f9fdf5;
+    outline: none;
+    font-family: inherit;
+    text-align: center;
+    transition: border-color 0.2s;
+}
+ 
+.toggle-item input[type="number"]:focus {
+    border-color: var(--green-main);
+    background: var(--white);
+}
+ 
+/*  Botão guardar  */
+input[type="submit"] {
+    display: inline-block;
+    padding: 12px 32px;
+    background: var(--green-main);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, transform 0.15s;
+}
+ 
+input[type="submit"]:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+}
+ 
+/* Responsivo */
+@media (max-width: 640px) {
+    .perfil-topo   { flex-direction: column; text-align: center; }
+    .perfil-secao  { padding: 20px 16px; }
+    .page-content  { margin: 16px auto; }
+}
+ 
+/*  Botões de ação do perfil  */
+.perfil-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+}
+ 
+#btn-editar {
+    padding: 12px 28px;
+    background: var(--green-main);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, transform 0.15s;
+}
+ 
+#btn-editar:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+}
+ 
+#btn-guardar {
+    display: none; /* escondido até clicar Editar */
+}
+ 
+#btn-cancelar {
+    display: none; /* escondido até clicar Editar */
+    padding: 12px 24px;
+    background: transparent;
+    color: var(--green-main);
+    border: 1.5px solid var(--green-main);
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
+}
+ 
+#btn-cancelar:hover {
+    background: var(--green-main);
+    color: var(--white);
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 8px 20px;
+    background: transparent;
+    color: var(--green-main);
+    border: 1.5px solid var(--green-main);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+    background: var(--green-main);
+    color: var(--white);
+}
+ 
+/* Inputs desativados — visual mais apagado para indicar que não são editáveis */
+.perfil-secao input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

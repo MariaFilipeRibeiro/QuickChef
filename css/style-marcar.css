@@ -1,0 +1,185 @@
+/* ============================================================
+   QUICK CHEF — style-marcar.css
+   Página: marcar.php
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --green-dark:  #1a3a0a;
+    --green-main:  #2d5a1b;
+    --green-light: #d4e6c3;
+    --green-pale:  #f0f7e8;
+    --red:         #dc2626;
+    --gray-border: #e5e5e5;
+    --gray-text:   #555;
+    --white:       #ffffff;
+}
+
+body.body-dashboard {
+    background-color: var(--green-pale);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Navbar */
+nav { display: flex; align-items: center; justify-content: space-between; background: var(--white); border-bottom: 1px solid var(--gray-border); padding: 0 24px; height: 60px; position: sticky; top: 0; z-index: 50; }
+.nav-logo { font-size: 18px; font-weight: 600; color: var(--green-dark); text-decoration: none; font-family: Georgia, serif; }
+.avatar-wrap { position: relative; }
+.avatar-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); border: 2px solid var(--green-light); color: var(--green-main); font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: inherit; outline: none; transition: opacity 0.2s; }
+.avatar-btn:hover { opacity: 0.8; }
+.dropdown { display: none; position: absolute; right: 0; top: calc(100% + 8px); background: var(--white); border: 1px solid var(--gray-border); border-radius: 10px; min-width: 180px; box-shadow: 0 4px 16px rgba(0,0,0,0.10); overflow: hidden; z-index: 100; }
+.avatar-wrap:focus-within .dropdown { display: block; }
+.dropdown a { display: flex; align-items: center; gap: 10px; padding: 11px 16px; font-size: 14px; color: #222; text-decoration: none; transition: background 0.1s; }
+.dropdown a:hover { background: var(--green-pale); }
+.dropdown a.active { color: var(--green-main); font-weight: 600; }
+.dropdown-divider { height: 1px; background: var(--gray-border); margin: 4px 0; }
+.dropdown .logout { color: var(--red); }
+
+/* Layout */
+.page-content { max-width: 700px; margin: 32px auto; padding: 0 20px; }
+.page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.page-title { font-size: 22px; font-weight: 700; color: var(--green-dark); font-family: Georgia, serif; }
+
+.btn-secondary { display: inline-block; padding: 8px 20px; background: transparent; color: var(--green-main); border: 1.5px solid var(--green-main); border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s, color 0.2s; }
+.btn-secondary:hover { background: var(--green-main); color: var(--white); }
+
+/* Mensagens */
+.msg-sucesso { background: #eaf6e0; border: 1px solid #b0d890; color: #2d6010; border-radius: 6px; padding: 10px 14px; font-size: 13px; margin-bottom: 16px; text-align: center; }
+.msg-erro { background: #fff0ee; border: 1px solid #f5c0b0; color: #a03020; border-radius: 6px; padding: 10px 14px; font-size: 13px; margin-bottom: 16px; text-align: center; }
+
+/* Navegação dias */
+.dia-nav { display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 24px; }
+.dia-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--white); border: 1.5px solid var(--green-light); border-radius: 8px; font-size: 20px; color: var(--green-main); text-decoration: none; transition: background 0.2s; }
+.dia-btn:hover { background: var(--green-light); }
+.dia-btn--disabled { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: transparent; border: 1.5px solid var(--gray-border); border-radius: 8px; font-size: 20px; color: #ccc; cursor: default; }
+.dia-label { font-size: 17px; font-weight: 700; color: var(--green-dark); font-family: Georgia, serif; min-width: 220px; text-align: center; }
+
+/* Card total kcal */
+.total-kcal-card {
+    background: var(--white);
+    border: 1.5px solid var(--green-main);
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.total-label { font-size: 14px; font-weight: 600; color: var(--green-dark); }
+.total-valor { font-size: 22px; font-weight: 800; color: var(--green-main); font-family: Georgia, serif; min-width: 100px; }
+.meta-label { font-size: 12px; color: var(--gray-text); margin-left: auto; }
+
+.meta-barra-wrap {
+    width: 100%;
+    height: 8px;
+    background: var(--green-light);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.meta-barra-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--green-main);
+    transition: width 0.3s, background 0.3s;
+}
+
+/* Grupos de opções */
+.grupo-card {
+    background: var(--white);
+    border: 1px solid var(--green-light);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+}
+
+.grupo-titulo {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-dark);
+    font-family: Georgia, serif;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--green-light);
+}
+
+.grupo-hint {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gray-text);
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.grupo-opcoes { display: flex; flex-direction: column; gap: 8px; }
+
+/* Opções de refeição */
+.opcao-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1.5px solid var(--green-light);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    background: var(--white);
+}
+
+.opcao-item:hover { background: var(--green-pale); border-color: var(--green-main); }
+.opcao-item.selecionada { background: var(--green-pale); border-color: var(--green-main); }
+
+.opcao-item input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--green-main);
+    flex-shrink: 0;
+}
+
+.opcao-nome { flex: 1; font-size: 14px; font-weight: 600; color: var(--green-dark); }
+.opcao-none { flex: 1; font-size: 13px; color: var(--gray-text); font-style: italic; }
+.opcao-kcal { font-size: 13px; font-weight: 700; color: var(--green-main); white-space: nowrap; }
+
+/* Badges */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+.badge-prato_principal { background: #fff3e0; color: #a05a00; }
+.badge-vegetariano     { background: #e8f5e0; color: #3a7a10; }
+.badge-vegan           { background: #e0ffe8; color: #0a6a30; }
+
+/* Botão guardar */
+.form-actions-bottom { display: flex; justify-content: center; margin-top: 24px; padding-bottom: 32px; }
+.form-actions-bottom input[type="submit"] {
+    padding: 14px 48px;
+    background: var(--green-main);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, transform 0.15s;
+}
+.form-actions-bottom input[type="submit"]:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+.aviso-vazio { text-align: center; padding: 60px 20px; color: var(--gray-text); font-size: 15px; background: var(--white); border: 1px solid var(--green-light); border-radius: 12px; }
+
+@media (max-width: 640px) { .page-content { margin: 16px auto; } .total-kcal-card { flex-direction: column; align-items: flex-start; } }
+
+/*  Aviso fim de semana  */
+.aviso-weekend {
+    text-align: center;
+    padding: 48px 20px;
+    background: var(--white);
+    border: 1px solid var(--green-light);
+    border-radius: 12px;
+    color: var(--gray-text);
+}
+
+.aviso-weekend p { font-size: 15px; margin-bottom: 8px; }
+.aviso-weekend p:first-child { font-size: 18px; font-weight: 700; color: var(--green-dark); font-family: Georgia, serif; }
+.aviso-weekend a { color: var(--green-main); font-weight: 600; text-decoration: none; }
+.aviso-weekend a:hover { text-decoration: underline; }

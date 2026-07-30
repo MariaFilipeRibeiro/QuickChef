@@ -1,0 +1,61 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FrontPage */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../imagens/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    letter-spacing: 0.3px;
+}
+
+.btn-comecar {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 12px 60px;
+    border: 1.5px solid #1a1a1a;
+    background: transparent;
+    color: #1a1a1a;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-comecar:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
